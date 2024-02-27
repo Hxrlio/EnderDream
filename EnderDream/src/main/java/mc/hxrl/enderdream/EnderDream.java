@@ -12,7 +12,8 @@ import org.slf4j.Logger;
 @Mod("enderdream")
 public class EnderDream {
 	
-    private static final Logger LOGGER = LogUtils.getLogger();
+	public static final String MODID = "enderdream";
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public EnderDream() {
         
