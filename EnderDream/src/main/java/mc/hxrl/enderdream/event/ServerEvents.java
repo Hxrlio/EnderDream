@@ -2,7 +2,6 @@ package mc.hxrl.enderdream.event;
 
 import mc.hxrl.enderdream.EnderDream;
 import mc.hxrl.enderdream.data.DragonKilledSavedData;
-import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
@@ -35,11 +34,28 @@ public class ServerEvents {
 			
 			if (time == 20) {
 				// tell client to make particles
-				Direction dir = player.getBedOrientation();
-				EnderDream.LOGGER.info(String.valueOf(dir.get2DDataValue()));
+				int dir = player.getBedOrientation().get2DDataValue();
+				double x = player.getX();
+				double y = player.getY();
+				double z = player.getZ();
+				//this thing doesn't work btw
+				EnderDream.LOGGER.info(String.valueOf(dir));
+				switch (dir) {
+					case 0:
+						EnderDream.LOGGER.info("0");
+						z -= 1;
+					case 1:
+						EnderDream.LOGGER.info("1");
+						x += 1;
+					case 2:
+						EnderDream.LOGGER.info("2");
+						z += 1;
+					case 3:
+						EnderDream.LOGGER.info("3");
+						x -= 1;
+				}
 				ServerLevel sLevel = (ServerLevel)player.level;
-				sLevel.sendParticles(ParticleTypes.CRIT, player.getX(), player.getY(), player.getZ(), 1, 0, 0, 0, 0);
-				sLevel.sendParticles(ParticleTypes.ENCHANTED_HIT, player.getBlockX(), player.getBlockY(), player.getBlockZ(), 1, 0, 0, 0, 0);
+				sLevel.sendParticles(ParticleTypes.CRIT, x, y, z, 10, 0, 0, 0, 0);
 				//sLevel.sendParticles(ParticleTypes.DRAGON_BREATH, player.getX(), player.getY() - 0.5, player.getZ(), 100, 1, 0, 1, 0);
 			}
 			if (time == 60) {
