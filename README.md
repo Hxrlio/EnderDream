@@ -28,7 +28,7 @@ However, having control over the day-night cycle is greatly useful to the player
 Completely unknown. Haven't tried it with any other sleep-altering mods. That information will appear here as provided/discovered.
 
 ## Current stage?
-Pre-Development. There's nothing here but a description for something that doesn't exist.
+Early Development. It just kills you when you sleep. Not released. Can clone off github though.
 
 #### Who are you?
 I am Hxrl. Minor contributor to [C4's Vein Mining](https://modrinth.com/mod/vein-mining). I made Yellow Pack, a basic modpack I drew up for low-end gamers. Creator of [Custom Coords](https://modrinth.com/mod/customcoords). Essentially, I'm not anyone important. Just an autistic guy who will grew up with, learned how to socialise from, and obsessed over this game. Please feel free to chat to me @ hxrl on Discord, or wherever else you can find me.
