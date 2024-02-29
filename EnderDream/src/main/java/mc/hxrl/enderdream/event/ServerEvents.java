@@ -38,6 +38,7 @@ public class ServerEvents {
 				double x = player.getX();
 				double y = player.getY();
 				double z = player.getZ();
+				
 				switch (dir) {
 					case 0:
 						z -= 1;
@@ -52,19 +53,79 @@ public class ServerEvents {
 						x -= 1;
 						break;
 				}
+				
 				ServerLevel sLevel = (ServerLevel)player.level;
-				sLevel.sendParticles(ParticleTypes.CRIT, x, y, z, 10, 0, 0, 0, 0);
-				//sLevel.sendParticles(ParticleTypes.DRAGON_BREATH, player.getX(), player.getY() - 0.5, player.getZ(), 100, 1, 0, 1, 0);
+				sLevel.sendParticles(ParticleTypes.DRAGON_BREATH, x, y - 0.5, z, 100, 2, 0, 2, 0);
+				
 			}
+			
+			if (time == 35) {
+				
+				int dir = player.getBedOrientation().get2DDataValue();
+				double x = player.getX();
+				double y = player.getY();
+				double z = player.getZ();
+				
+				switch (dir) {
+					case 0:
+						z -= 1;
+						break;
+					case 1:
+						x += 1;
+						break;
+					case 2:
+						z += 1;
+						break;
+					case 3:
+						x -= 1;
+						break;
+				}
+				
+				ServerLevel sLevel = (ServerLevel)player.level;
+				sLevel.sendParticles(ParticleTypes.DRAGON_BREATH, x, y - 0.5, z, 800, 1.5, 0, 1.5, 0);
+				
+			}
+			
+			if (time == 50) {
+				
+				int dir = player.getBedOrientation().get2DDataValue();
+				double x = player.getX();
+				double y = player.getY();
+				double z = player.getZ();
+				
+				switch (dir) {
+					case 0:
+						z -= 1;
+						break;
+					case 1:
+						x += 1;
+						break;
+					case 2:
+						z += 1;
+						break;
+					case 3:
+						x -= 1;
+						break;
+				}
+				
+				ServerLevel sLevel = (ServerLevel)player.level;
+				sLevel.sendParticles(ParticleTypes.DRAGON_BREATH, x, y, z, 200, 0.5, 0, 0.5, 0);
+			}
+			
 			if (time == 60) {
-				// dragon roar
+				//send dragon roar packet
+				
 			}
+			
 			if (time == 80) {
-				// 1 second of blindness
+				// 5 second of blindness
 			}
+			
 			if (time == 99) {
+				
 				player.die(DamageSource.GENERIC);
 				player.stopSleeping();
+				
 			}
 		}
 	}
