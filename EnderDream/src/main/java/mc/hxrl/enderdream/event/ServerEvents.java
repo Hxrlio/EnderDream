@@ -38,21 +38,19 @@ public class ServerEvents {
 				double x = player.getX();
 				double y = player.getY();
 				double z = player.getZ();
-				//this thing doesn't work btw
-				EnderDream.LOGGER.info(String.valueOf(dir));
 				switch (dir) {
 					case 0:
-						EnderDream.LOGGER.info("0");
 						z -= 1;
+						break;
 					case 1:
-						EnderDream.LOGGER.info("1");
 						x += 1;
+						break;
 					case 2:
-						EnderDream.LOGGER.info("2");
 						z += 1;
+						break;
 					case 3:
-						EnderDream.LOGGER.info("3");
 						x -= 1;
+						break;
 				}
 				ServerLevel sLevel = (ServerLevel)player.level;
 				sLevel.sendParticles(ParticleTypes.CRIT, x, y, z, 10, 0, 0, 0, 0);
