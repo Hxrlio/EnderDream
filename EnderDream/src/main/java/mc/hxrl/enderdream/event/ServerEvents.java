@@ -5,6 +5,8 @@ import mc.hxrl.enderdream.data.DragonKilledSavedData;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.player.SleepingTimeCheckEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -113,12 +115,14 @@ public class ServerEvents {
 			}
 			
 			if (time == 60) {
-				//send dragon roar packet
+				//blindness (5s) night vision (4.5s)
+				player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 0, false, false));
+				player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 90, 0, false, false));
 				
 			}
 			
 			if (time == 80) {
-				// 5 second of blindness
+				//roar
 			}
 			
 			if (time == 99) {
