@@ -5,19 +5,19 @@ The dragon waits patiently for you to close your eyes and drift into her grasp.
 No Questions have been asked.
 
 ## Where Mod?
-[Modrinth page](https://modrinth.com/project/ender-dream) (WIP)
+[Modrinth page](https://modrinth.com/project/ender-dream) (Awaiting Review)
 
 ## Where complain Mod broken?
 [Ender Dream Issues](https://github.com/Hxrlio/EnderDream/issues)
 
 ## Versions?
-Currently Unreleased for Forge 1.18.2 only.
+Currently Awaiting Review for Forge 1.18.2 only.
 
 ## Side?
 Both sides.
 
 ## Development?
-Super casual. Currently doesn't exist.
+Super casual. Not guaranteed to fix issues.
 
 ## Goal?
 Since its introduction, the bed has fundamentally opposed the existing structure and meaning of Minecraft. There have been many steps along the road from Beta's true survival experience to the modern 'the only way I can die is if I do something incredibly stupid'. The bed was one of those steps. Skipping the night takes away interesting decisions and risk from the player. Beds should not be the most powerful option for self-defence.
@@ -28,7 +28,7 @@ However, having control over the day-night cycle is greatly useful to the player
 Completely unknown. Haven't tried it with any other sleep-altering mods. That information will appear here as provided/discovered.
 
 ## Current stage?
-Early Development. It just kills you when you sleep. Not released. Can clone off github though.
+Finished Development. Likely to have compatibility issues, as this area is untested. Not available due to awaiting review on modrinth. Can clone off github though.
 
 #### Who are you?
-I am Hxrl. Minor contributor to [C4's Vein Mining](https://modrinth.com/mod/vein-mining). I made Yellow Pack, a basic modpack I drew up for low-end gamers. Creator of [Custom Coords](https://modrinth.com/mod/customcoords). Essentially, I'm not anyone important. Just an autistic guy who will grew up with, learned how to socialise from, and obsessed over this game. Please feel free to chat to me @ hxrl on Discord, or wherever else you can find me.
+I am Hxrl. Creator of [Custom Coords](https://modrinth.com/mod/customcoords). Minor contributor to [C4's Vein Mining](https://modrinth.com/mod/vein-mining). Essentially, I'm not anyone important. Just an autistic guy who will grew up with, learned how to socialise from, and obsessed over this game. Please feel free to chat to me @ hxrl on Discord, or wherever else you can find me.
