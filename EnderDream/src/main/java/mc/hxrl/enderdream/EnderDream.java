@@ -2,6 +2,8 @@ package mc.hxrl.enderdream;
 
 import com.mojang.logging.LogUtils;
 
+import mc.hxrl.enderdream.network.EnderDreamPacketHandler;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -14,34 +16,20 @@ public class EnderDream {
 	
 	public static final String MODID = "enderdream";
     public static final Logger LOGGER = LogUtils.getLogger();
+    //custom damage source that cannot be stopped, resulting in a guaranteed player death with sufficiently high damage
+    public static final DamageSource DRAGON_MENTAL = new DamageSource("enderdream.dragonmental").bypassArmor().bypassInvul().bypassMagic();
 
     public EnderDream() {
         
     	IEventBus mbus = FMLJavaModLoadingContext.get().getModEventBus();
         mbus.addListener(this::setup);
-//        mbus.addListener(this::enqueueIMC);
-//        mbus.addListener(this::processIMC);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+    	//register SimpleChannel
+    	EnderDreamPacketHandler.register();
     	
-    	LOGGER.info("operational");
-    	
     }
-    
-/* I might need to do these things for the purposes of compatibility with other sleep related mods, only time will tell.
-    private void enqueueIMC(final InterModEnqueueEvent event)
-    {
-        // Some example code to dispatch IMC to another mod
-        InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
-    }
-
-    private void processIMC(final InterModProcessEvent event) {
-        LOGGER.info("Got IMC {}", event.getIMCStream().
-                map(m->m.messageSupplier().get()).
-                collect(Collectors.toList()));
-    }
-*/
 }

@@ -14,24 +14,24 @@ public class CommonEvents {
 		
 		@SubscribeEvent
 		public static void entityDied(LivingDeathEvent e) {
-			
+
 			DragonKilledSavedData dragonKilledSavedData = DragonKilledSavedData.get();
-			
+			//we don't care about the death of entities if the dragon has already died.
 			if (dragonKilledSavedData.DRAGON_KILLED == 1) {
 				return;
 			}
 			
 			Entity entity = e.getEntity();
 			DragonKilledSavedData.get();
-			
+			//only the server cares about if the dragon dies
 			if (entity.level.isClientSide) {
 				return;
 			}
-			
+			//we only care if the thing that died is the dragon
 			if (!entity.getType().toShortString().equals("ender_dragon")) {
 				return;
 			}
-			
+			//if it is then lets mark it.
 			dragonKilledSavedData.dragonKilled();
 			
 		}

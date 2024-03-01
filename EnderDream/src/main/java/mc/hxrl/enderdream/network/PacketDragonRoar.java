@@ -1,6 +1,7 @@
 package mc.hxrl.enderdream.network;
 
-import io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue.Supplier;
+
+import java.util.function.Supplier;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -10,7 +11,7 @@ import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class PacketDragonRoar {
-	
+	//the message is empty so we don't have to bother with these 3
 	public PacketDragonRoar() {
 		
 	}
@@ -22,20 +23,16 @@ public class PacketDragonRoar {
 	public PacketDragonRoar(FriendlyByteBuf buffer) {
 		
 	}
-	
-	public void messageConsumer(Supplier<NetworkEvent.Context> ctx) {
-		
-	}
-	
-	public static void handle(Supplier<NetworkEvent.Context> ctx) {
+	//handle is on the network thread, so we send it back to the game threads, then make sure its on the client thread, as thats the whole point of this packet.
+	public void handle(Supplier<NetworkEvent.Context> ctx) {
 		ctx.get().enqueueWork(() ->
 			DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> handleSafe(ctx))
 		);
 		ctx.get().setPacketHandled(true);
 	}
-	
+	//now we're definitely on the client we can do what we need to do.
 	public static void handleSafe(Supplier<NetworkEvent.Context> ctx) {
 		Minecraft mc = Minecraft.getInstance();
-		mc.player.playSound(ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.ender_dragon.growl")), 1, (float)0.7);
+		mc.player.playSound(ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.ender_dragon.growl")), 1, (float)0.8);
 	}
 }
