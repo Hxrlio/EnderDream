@@ -134,12 +134,12 @@ public class ServerEvents {
 			
 			if (time == 99) {
 				//if the player didn't get the hint that something bad was about to happen, they die
-				player.hurt(EnderDream.DRAGON_MENTAL, 1000);
+				player.getCombatTracker().recordDamage(EnderDream.DRAGON_MENTAL, 0, 0);
+				player.die(EnderDream.DRAGON_MENTAL);
 				//for some reason if the player dies on the 2nd to last tick of sleeping they can still skip the night, which is exactly what we're trying to avoid.
 				//so we just shove their corpse out the bed.
 				//interestingly .stopSleeping() is also called inside of .die(DamageSource dmgSrc), so I have no idea why we have to do it again.
 				player.stopSleeping();
-				
 			}
 		}
 	}

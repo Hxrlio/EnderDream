@@ -17,7 +17,7 @@ public class EnderDream {
 	public static final String MODID = "enderdream";
     public static final Logger LOGGER = LogUtils.getLogger();
     //custom damage source that cannot be stopped, resulting in a guaranteed player death with sufficiently high damage
-    public static final DamageSource DRAGON_MENTAL = new DamageSource("enderdream.dragonmental").bypassArmor().bypassInvul().bypassMagic();
+    public static final DamageSource DRAGON_MENTAL = new DamageSource("enderdream.dragonmental");//.bypassArmor().bypassInvul().bypassMagic();
 
     public EnderDream() {
         
