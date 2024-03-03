@@ -23,7 +23,7 @@ description='''
 The Ender Dragon rules over the domain of dreams... how else would she amass so many victims?
 ''' #M
 
-[[dependencies.customcoords]]
+[[dependencies.enderdream]]
     modId="forge" #M
     mandatory=true #M
     versionRange="[40,)" #M
@@ -32,7 +32,7 @@ The Ender Dragon rules over the domain of dreams... how else would she amass so 
     # BOTH / CLIENT / SERVER
     side="BOTH" #M
 
-[[dependencies.customcoords]]
+[[dependencies.enderdream]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.18.2,1.19)"
